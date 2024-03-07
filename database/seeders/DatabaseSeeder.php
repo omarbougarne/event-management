@@ -4,9 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\City;
-use App\Models\Country;
-use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
