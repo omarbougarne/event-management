@@ -16,9 +16,17 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
 {
-    $events = Event::all();
+    $query = $request->input('query');
+    $events = Event::query();
+
+    if ($query) {
+        $events->where('title', 'like', '%' . $query . '%');
+    }
+
+    $events = $events->get();
+
     return view('events.index', compact('events'));
 }
 
