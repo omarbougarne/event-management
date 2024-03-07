@@ -64,7 +64,7 @@ class EventController extends Controller
 
         $event->save();
 
-        return response()->json(['message' => 'Event created successfully', 'event' => $event], 201);
+        return back();
     }
 
 

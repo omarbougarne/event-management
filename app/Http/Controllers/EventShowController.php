@@ -13,9 +13,8 @@ class EventShowController extends Controller
     public function __invoke($id)
     {
         $event = Event::findOrFail($id);
-        $savedEvent = $event->savedEvents()->where('user_id', auth()->id())->first();
         $attending = $event->attendings()->where('user_id', auth()->id())->first();
 
-        return view('eventsShow', compact('event', 'savedEvent', 'attending'));
+        return view('eventsShow', compact('event', 'attending'));
     }
 }
